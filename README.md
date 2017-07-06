@@ -1,5 +1,5 @@
 # csv-to-firebase
-A small command line tool to update firebase database on firebase from a csv file
+A small command line tool to update firebase database on firebase from a csv file.
 
 ## Installation
 ```sh
@@ -47,3 +47,8 @@ This will save data in the firebase `/users` reference like this:
     - favColor
 ```
 
+License
+
+#### License
+
+MIT © [ateev](https://github.com/ateev)
