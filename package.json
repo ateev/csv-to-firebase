@@ -1,0 +1,36 @@
+{
+  "devDependencies": {
+    "lerna": "2.0.0-beta.32"
+  },
+  "name": "csv-to-firebase",
+  "description": "A npm module to update database on firebase from a csv file",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ateev/csv-to-firebase.git"
+  },
+  "keywords": [
+    "firebase",
+    "csv"
+  ],
+  "bin": {
+    "csvtofirebase": "./index.js"
+  },
+  "author": "ateev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ateev/csv-to-firebase/issues"
+  },
+  "homepage": "https://github.com/ateev/csv-to-firebase#readme",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "csv": "^1.1.1",
+    "csvtojson": "^1.1.7",
+    "firebase": "^4.1.3",
+    "lodash": "^4.17.4"
+  }
+}
