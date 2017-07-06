@@ -28,9 +28,7 @@
   "homepage": "https://github.com/ateev/csv-to-firebase#readme",
   "dependencies": {
     "commander": "^2.11.0",
-    "csv": "^1.1.1",
     "csvtojson": "^1.1.7",
-    "firebase": "^4.1.3",
-    "lodash": "^4.17.4"
+    "firebase-admin": "^5.0.0"
   }
 }

@@ -1,17 +1,18 @@
 #!/usr/bin/env node --harmony
 var csvToJson = require('csvtojson');
 var program = require('commander');
-var firebase = require('firebase');
+var admin = require("firebase-admin");
 
 program
   .version("0.0.1")
   .description('Upload data from csv to your firebase database')
-  .arguments('<csv> <firebaseConfig> <reference> <keyName>')
-  .action(function(csv, firebaseConfig, dbReference, keyName) {
+  .arguments('<csv> <firebasePrivateKey> <databaseurl> <reference> <keyName>')
+  .action(function(csv, firebasePrivateKey, databaseurl, dbReference, keyName) {
     csvFile = csv;
-    config = firebaseConfig;
+    config = firebasePrivateKey;
     reference = dbReference;
     key = keyName;
+    databaseUrl = databaseurl;
   })
   .parse(process.argv);
 
@@ -22,7 +23,12 @@ if (typeof csvFile === 'undefined' || typeof config === 'undefined') {
 
 var fs = require('fs');
 var config = JSON.parse(fs.readFileSync(config, 'utf8'));
-var firebase = firebase.initializeApp(config);
+//var firebase = firebase.initializeApp(config);
+
+var firebase = admin.initializeApp({
+  credential: admin.credential.cert(config),
+  databaseURL: databaseUrl
+});
 
 const converter = csvToJson({
   ignoreEmpty: true,
