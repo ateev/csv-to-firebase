@@ -34,10 +34,14 @@ const converter = csvToJson({
   ignoreEmpty: true,
 });
 
-csvToJson()
+csvToJson({
+  trim:true,
+  checkType:false,
+})
   .fromFile(csvFile)
     .on('json', function(jsonObj) {
       var childName = jsonObj[key];
+      console.log("Pushing " + childName);
       firebase
         .database()
         .ref(reference)
