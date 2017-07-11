@@ -4,7 +4,7 @@ var program = require('commander');
 var admin = require("firebase-admin");
 
 program
-  .version("0.0.1")
+  .version("0.1.2")
   .description('Upload data from csv to your firebase database')
   .arguments('<csv> <firebasePrivateKey> <databaseurl> <reference> <keyName>')
   .action(function(csv, firebasePrivateKey, databaseurl, dbReference, keyName) {
@@ -23,19 +23,15 @@ if (typeof csvFile === 'undefined' || typeof config === 'undefined') {
 
 var fs = require('fs');
 var config = JSON.parse(fs.readFileSync(config, 'utf8'));
-//var firebase = firebase.initializeApp(config);
 
 var firebase = admin.initializeApp({
   credential: admin.credential.cert(config),
   databaseURL: databaseUrl
 });
 
-const converter = csvToJson({
-  ignoreEmpty: true,
-});
-
 csvToJson({
   trim:true,
+  ignoreEmpty: true,
   checkType:false,
 })
   .fromFile(csvFile)
