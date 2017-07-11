@@ -4,7 +4,7 @@
   },
   "name": "csv-to-firebase",
   "description": "A npm module to update database on firebase from a csv file",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "scripts": {
     "test": "test"
