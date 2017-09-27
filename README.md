@@ -3,7 +3,7 @@ A small command line tool to update firebase database on firebase from a csv fil
 
 ## Installation
 ```sh
- npm install -g csvtofirebase
+ npm install -g csv-to-firebase
 ```
 
 ## Usage
